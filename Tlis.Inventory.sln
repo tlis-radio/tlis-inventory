@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tlis.Inventory.Core", "src\Core\Tlis.Inventory.Core.csproj", "{06B8BFFF-469E-4E97-BA30-5704C9DC87C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tlis.Inventory.Web", "src\Web\Tlis.Inventory.Web.csproj", "{348CEC8A-50CA-48E2-A1EC-ACFED1D85D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tlis.Inventory.Application", "src\Application\Tlis.Inventory.Application.csproj", "{4D2185AF-A082-4285-9E95-29E33A99C96B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tlis.Inventory.Infrastructure", "src\Infrastructure\Tlis.Inventory.Infrastructure.csproj", "{0555D03B-C449-4611-9DA1-85C7352A5E19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{48E5CC5C-9C9D-4AF4-A8F1-13F95D8D1A94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tlis.Inventory.Tests", "tests\Tests\Tlis.Inventory.Tests.csproj", "{2A7C3E4E-AAAF-4B66-80BE-21C6C3C62079}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9605FB18-2346-493C-A49F-2A7BFBFE660E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06B8BFFF-469E-4E97-BA30-5704C9DC87C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B8BFFF-469E-4E97-BA30-5704C9DC87C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B8BFFF-469E-4E97-BA30-5704C9DC87C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B8BFFF-469E-4E97-BA30-5704C9DC87C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{348CEC8A-50CA-48E2-A1EC-ACFED1D85D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{348CEC8A-50CA-48E2-A1EC-ACFED1D85D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{348CEC8A-50CA-48E2-A1EC-ACFED1D85D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{348CEC8A-50CA-48E2-A1EC-ACFED1D85D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D2185AF-A082-4285-9E95-29E33A99C96B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D2185AF-A082-4285-9E95-29E33A99C96B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D2185AF-A082-4285-9E95-29E33A99C96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D2185AF-A082-4285-9E95-29E33A99C96B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0555D03B-C449-4611-9DA1-85C7352A5E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0555D03B-C449-4611-9DA1-85C7352A5E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0555D03B-C449-4611-9DA1-85C7352A5E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0555D03B-C449-4611-9DA1-85C7352A5E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7C3E4E-AAAF-4B66-80BE-21C6C3C62079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7C3E4E-AAAF-4B66-80BE-21C6C3C62079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7C3E4E-AAAF-4B66-80BE-21C6C3C62079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7C3E4E-AAAF-4B66-80BE-21C6C3C62079}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A7C3E4E-AAAF-4B66-80BE-21C6C3C62079} = {48E5CC5C-9C9D-4AF4-A8F1-13F95D8D1A94}
+		{4D2185AF-A082-4285-9E95-29E33A99C96B} = {9605FB18-2346-493C-A49F-2A7BFBFE660E}
+		{06B8BFFF-469E-4E97-BA30-5704C9DC87C7} = {9605FB18-2346-493C-A49F-2A7BFBFE660E}
+		{0555D03B-C449-4611-9DA1-85C7352A5E19} = {9605FB18-2346-493C-A49F-2A7BFBFE660E}
+		{348CEC8A-50CA-48E2-A1EC-ACFED1D85D69} = {9605FB18-2346-493C-A49F-2A7BFBFE660E}
+	EndGlobalSection
+EndGlobal
