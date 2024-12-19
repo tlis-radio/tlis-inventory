@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tlis.Inventory.Application.Features.Storage.Entities;
+using Tlis.Inventory.Application.Features.Storage.Repositories;
 using Tlis.Inventory.Core;
 using Tlis.Inventory.Infrastructure.DataAccess.Storage;
 using Tlis.Inventory.Infrastructure.DataAccess.Storage.Repositories;
@@ -22,7 +23,7 @@ public static class InfrastructureModule
 
             builder.UseNpgsql(connectionString);
         });
-        services.AddScoped<IRepository<Category>, CategoryRepository>();
-        services.AddScoped<IRepository<Item>, ItemRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<IItemRepository, ItemRepository>();
     }
 }
