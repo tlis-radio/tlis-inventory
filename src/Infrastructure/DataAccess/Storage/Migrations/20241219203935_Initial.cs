@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Tlis.Inventory.Infrastructure.DataAccess.Migrations
+namespace Tlis.Inventory.Infrastructure.DataAccess.Storage.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

@@ -8,7 +8,7 @@ using Tlis.Inventory.Infrastructure.DataAccess.Storage;
 
 #nullable disable
 
-namespace Tlis.Inventory.Infrastructure.DataAccess.Migrations
+namespace Tlis.Inventory.Infrastructure.DataAccess.Storage.Migrations
 {
     [DbContext(typeof(StorageDbContext))]
     partial class StorageDbContextModelSnapshot : ModelSnapshot
