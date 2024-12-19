@@ -1,9 +1,14 @@
-var builder = WebApplication.CreateBuilder(args);
+using Tlis.Inventory.Application;
+using Tlis.Inventory.Infrastructure;
+
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

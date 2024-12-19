@@ -4,6 +4,17 @@
     <ProjectReference Include="..\Core\Tlis.Inventory.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Storage\Commands\" />
+    <Folder Include="Features\Storage\Dtos\" />
+    <Folder Include="Features\Storage\Queries\" />
+    <Folder Include="Features\Storage\Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
