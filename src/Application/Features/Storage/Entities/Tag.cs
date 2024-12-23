@@ -1,8 +1,6 @@
 ﻿namespace Tlis.Inventory.Application.Features.Storage.Entities;
 
-public class Category
+public class Tag
 {
-    public int Id { get; set; }
-    
     public required string Name { get; set; }
 }

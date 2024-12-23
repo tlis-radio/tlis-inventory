@@ -9,7 +9,6 @@
     <Folder Include="Features\Storage\Commands\Update\" />
     <Folder Include="Features\Storage\Dtos\" />
     <Folder Include="Features\Storage\Queries\Get\" />
-    <Folder Include="Features\Storage\Queries\List\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -15,6 +15,11 @@ public class ItemConfiguration : IEntityTypeConfiguration<Item>
             .HasForeignKey(item => item.CategoryId)
             .IsRequired();
 
+        builder.HasMany<Tag>()
+            .WithMany()
+            .UsingEntity<ItemToTag>()
+            .HasKey(itemToTag => new { itemToTag.ItemId, itemToTag.TagName });
+
         builder.Property(item => item.Name)
             .IsRequired()
             .HasMaxLength(100);
