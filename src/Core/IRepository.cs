@@ -9,21 +9,15 @@ public interface IRepository<TEntity> where TEntity : class
     public IQueryable<TEntity> Query();
 
     /// <summary>
-    ///     Creates a new entity instance in the database
+    ///     Creates a new entity instance in the database if the primary key is not set.
+    ///     Otherwise, updates an existing entity instance in the database by entity id 
     /// </summary>
-    /// <param name="entity">An entity to create</param>
+    /// <param name="entity">An entity to create or update</param>
     /// <param name="cancellationToken">A cancellation token</param>
-    public Task Create(TEntity entity, CancellationToken cancellationToken = default);
+    public Task CreateOrUpdate(TEntity entity, CancellationToken cancellationToken = default);
 
     /// <summary>
-    ///     Updates an existing entity instance in the database by entity id. Projection should exist in the database
-    /// </summary>
-    /// <param name="entity">An entity to update</param>
-    /// <param name="cancellationToken">A cancellation token</param>
-    public Task Update(TEntity entity, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    ///     Reads an existing entity and returns it as non tracking
+    ///     Reads an existing entity and returns it
     /// </summary>
     /// <param name="entityId">The id of an entity to read</param>
     /// <param name="cancellationToken">A cancellation token</param>
@@ -38,7 +32,7 @@ public interface IRepository<TEntity> where TEntity : class
     public Task Delete(object[] entityId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    ///     Reads an existing entity and returns it as non tracking
+    ///     Reads an existing entity and returns it
     /// </summary>
     /// <param name="entityId">The id of an entity to read</param>
     /// <param name="cancellationToken">A cancellation token</param>

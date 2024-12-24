@@ -25,5 +25,7 @@ public static class InfrastructureModule
         });
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IItemRepository, ItemRepository>();
+        services.AddScoped<IItemToTagRepository, ItemToTagRepository>();
+        services.AddScoped<ITagRepository, TagRepository>();
     }
 }

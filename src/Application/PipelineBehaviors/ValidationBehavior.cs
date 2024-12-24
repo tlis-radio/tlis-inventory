@@ -6,7 +6,7 @@ using Tlis.Inventory.Core;
 namespace Tlis.Inventory.Application.PipelineBehaviors;
 
 public class ValidationBehavior<TRequest, TResponse>(IEnumerable<IValidator> validators) : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : class, ICommand<TResponse>
+    where TRequest : class
 {
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {

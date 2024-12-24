@@ -9,13 +9,7 @@ public abstract class DefaultRepository<TEntity, TDbContext>(TDbContext dbContex
 {
     public virtual IQueryable<TEntity> Query() => dbContext.Set<TEntity>().AsNoTracking();
 
-    public virtual async Task Create(TEntity entity, CancellationToken cancellationToken = default)
-    {
-        await dbContext.Set<TEntity>().AddAsync(entity, cancellationToken);
-        await dbContext.SaveChangesAsync(cancellationToken);
-    }
-
-    public virtual async Task Update(TEntity entity, CancellationToken cancellationToken = default)
+    public virtual async Task CreateOrUpdate(TEntity entity, CancellationToken cancellationToken = default)
     {
         dbContext.Set<TEntity>().Update(entity);
         await dbContext.SaveChangesAsync(cancellationToken);

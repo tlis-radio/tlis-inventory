@@ -5,10 +5,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Storage\Commands\Delete\" />
-    <Folder Include="Features\Storage\Commands\Update\" />
     <Folder Include="Features\Storage\Dtos\" />
     <Folder Include="Features\Storage\Queries\Get\" />
+    <Folder Include="Features\Storage\Scenarios\" />
   </ItemGroup>
 
   <ItemGroup>
