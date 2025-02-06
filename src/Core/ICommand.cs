@@ -2,8 +2,8 @@
 
 namespace Tlis.Inventory.Core;
 
-public interface ICommandBase : IRequest;
+public interface ICommandBase;
 
-public interface ICommand : ICommandBase;
+public interface ICommand : IRequest;
 
-public interface ICommand<out TResult> : ICommandBase, IRequest<TResult>;
+public interface ICommand<out TResult> : IRequest<TResult>, ICommandBase;
