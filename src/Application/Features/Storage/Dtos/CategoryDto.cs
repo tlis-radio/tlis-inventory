@@ -1,6 +1,6 @@
-﻿namespace Tlis.Inventory.Web.Models;
+﻿namespace Tlis.Inventory.Application.Features.Storage.Dtos;
 
-public class CategoryViewModel
+public record CategoryDto
 {
     public required int Id { get; set; }
     

@@ -5,8 +5,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Storage\Dtos\" />
-    <Folder Include="Features\Storage\Queries\Get\" />
     <Folder Include="Features\Storage\Scenarios\" />
   </ItemGroup>
 

@@ -1,5 +1,4 @@
-﻿
-@model List<CategoryViewModel>
+﻿@model List<CategoryViewModel>
 
 @{
     ViewBag.Title = "Categories";
@@ -7,23 +6,34 @@
 }
 
 <div class="flex flex-row flex-wrap justify-center content-start gap-x-4 gap-y-4 w-full min-h-full p-4">
-    @foreach (var category in Model)
+    @foreach (CategoryViewModel category in Model)
     {
-        <div class="flex grow justify-center min-h-16 p-4 bg-celestial-blue text-black text-xl transition-colors duration-75 hover:bg-lapis-lazuli hover:text-white ease-in-out rounded shadow-lg shadow-gray-400 hover:shadow-celestial-blue">
-            <a asp-controller="Category" asp-action="ListItems" asp-route-id="@category.Id"
-               class="flex justify-center items-center h-full w-fit">
+        <div class="category-brick">
+            <a asp-controller="Category" asp-action="Details" asp-route-id="@category.Id"
+               class="link-to-items">
                 @category.Name
             </a>
         </div>
     }
-    <div class="flex grow justify-center min-h-16 p-4 bg-celestial-blue text-black text-xl transition-colors duration-75 hover:bg-lapis-lazuli hover:text-white ease-in-out rounded shadow-lg shadow-gray-400 hover:shadow-celestial-blue">
-        <form method="post" asp-controller="Category" asp-action="Create" class="flex flex-row h-full grow">
-            <input id="name" name="name" type="text" placeholder="Name" required="required" class="grow"/>
-            <button type="submit" class="h-full">
-                <svg class="h-full stroke-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+    
+    <div class="category-brick">
+        <form method="post" asp-controller="Category" asp-action="Create" class="add-category-form flex-nowrap shrink-0 grow">
+            <input name="name" size="1" type="text" placeholder="Name" required="required"/>
+        
+            <button type="submit" class="btn">
+                <svg class="h-full " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                     <path d="M20 7L11.5 15.5M4 13L9.0001 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
         </form>
     </div>
+    @if (!ViewData.ModelState.IsValid)
+    {
+        @foreach (string stateKey in ViewData.ModelState.Keys)
+        {
+            <div class="category-brick bg-cinnabar hover:shadow-cinnabar hover:bg-chili-red">
+                @Html.ValidationMessage(stateKey)
+            </div>
+        }
+    }
 </div>

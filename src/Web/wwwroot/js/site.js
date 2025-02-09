@@ -5,12 +5,12 @@
 
 
 function toggle_nav_menu() {
-	let nav_menu = document.getElementById("nav-menu")
+		let nav_menu = document.getElementById("nav-menu")
 	
-	let value = nav_menu.ariaHidden
+		let value = nav_menu.ariaHidden
 	
-	if (value === "true")
-		nav_menu.ariaHidden = "false"
-	else
-		nav_menu.ariaHidden = "true"
+		if (value === "true")
+				nav_menu.ariaHidden = "false"
+		else
+				nav_menu.ariaHidden = "true"
 }
