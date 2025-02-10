@@ -8,16 +8,16 @@
 <div class="flex flex-row flex-wrap justify-center content-start gap-x-4 gap-y-4 w-full min-h-full p-4">
     @foreach (CategoryViewModel category in Model)
     {
-        <div class="category-brick">
-            <a asp-controller="Category" asp-action="Details" asp-route-id="@category.Id"
+        <a asp-controller="Items" asp-action="FromCategory" asp-route-categoryId="@category.Id" class="category-brick" >
+            <span
                class="link-to-items">
                 @category.Name
-            </a>
-        </div>
+            </span>
+        </a>
     }
     
     <div class="category-brick">
-        <form method="post" asp-controller="Category" asp-action="Create" class="add-category-form flex-nowrap shrink-0 grow">
+        <form method="post" asp-controller="Categories" asp-action="Create" class="add-category-form flex-nowrap shrink-0 grow">
             <input name="name" size="1" type="text" placeholder="Name" required="required"/>
         
             <button type="submit" class="btn">

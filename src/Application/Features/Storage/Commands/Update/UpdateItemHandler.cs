@@ -20,6 +20,6 @@ public class UpdateItemHandler(StorageUnitOfWork unitOfWork) : ICommandHandler<U
         if (quantity is int value)
             item.Quantity = value;
 
-        await unitOfWork.Items.CreateOrUpdate(item, cancellationToken);
+        await unitOfWork.Items.Update(item, cancellationToken);
     }
 }

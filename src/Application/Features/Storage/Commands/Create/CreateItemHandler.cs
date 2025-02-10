@@ -16,7 +16,7 @@ public class CreateItemHandler(StorageUnitOfWork unitOfWork) : ICommandHandler<C
             Quantity = quantity
         };
 
-        await unitOfWork.Items.CreateOrUpdate(item, cancellationToken);
+        await unitOfWork.Items.Create(item, cancellationToken);
 
         return item.Id;
     }

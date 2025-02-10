@@ -5,13 +5,14 @@ using Tlis.Inventory.Application.Features.Storage.Commands.Create;
 using Tlis.Inventory.Application.Features.Storage.Commands.Delete;
 using Tlis.Inventory.Application.Features.Storage.Commands.Update;
 using Tlis.Inventory.Application.Features.Storage.Dtos;
+using Tlis.Inventory.Application.Features.Storage.Queries.Get;
 using Tlis.Inventory.Application.Features.Storage.Queries.List;
 using Tlis.Inventory.Web.Models;
 
 namespace Tlis.Inventory.Web.Controllers;
 
 [Controller]
-public class CategoryController(IMediator mediator) : Controller
+public class CategoriesController(IMediator mediator) : Controller
 {
     [HttpGet]
     public async Task<IActionResult> Index()
@@ -43,11 +44,8 @@ public class CategoryController(IMediator mediator) : Controller
     }
 
     [HttpPut]
-    public async Task<IActionResult> Update(int id, [FromForm, Required, StringLength(100)] string name)
+    public async Task<IActionResult> Update(int id, [FromForm, StringLength(100)] string name)
     {
-        if (string.IsNullOrWhiteSpace(name))
-            ModelState.AddModelError("name", "Name cannot be empty.");
-
         if (!ModelState.IsValid)
             return await Details(id);
         
@@ -67,7 +65,6 @@ public class CategoryController(IMediator mediator) : Controller
     [HttpGet]
     public async Task<IActionResult> Details(int id)
     {
-        
-        return View("Details");
+        throw new NotImplementedException();
     }
 }

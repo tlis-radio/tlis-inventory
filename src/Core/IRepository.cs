@@ -9,12 +9,19 @@ public interface IRepository<TEntity> where TEntity : class
     public IQueryable<TEntity> Query();
 
     /// <summary>
-    ///     Creates a new entity instance in the database if the primary key is not set.
-    ///     Otherwise, updates an existing entity instance in the database by entity id 
+    ///     Creates new entity instance in the database 
     /// </summary>
-    /// <param name="entity">An entity to create or update</param>
+    /// <param name="entity">An entity to create</param>
     /// <param name="cancellationToken">A cancellation token</param>
-    public Task CreateOrUpdate(TEntity entity, CancellationToken cancellationToken = default);
+    public Task Create(TEntity entity, CancellationToken cancellationToken = default);    
+    
+
+    /// <summary>
+    ///     Updates an existing entity instance in the database by entity id 
+    /// </summary>
+    /// <param name="entity">An entity to update</param>
+    /// <param name="cancellationToken">A cancellation token</param>
+    public Task Update(TEntity entity, CancellationToken cancellationToken = default);
 
     /// <summary>
     ///     Reads an existing entity and returns it

@@ -9,7 +9,7 @@ public class CreateTagHandler(StorageUnitOfWork unitOfWork) : ICommandHandler<Cr
     {
         var tag = new Tag { Name = request.Name };
 
-        await unitOfWork.Tags.CreateOrUpdate(tag, cancellationToken);
+        await unitOfWork.Tags.Create(tag, cancellationToken);
 
         return tag.Name;
     }

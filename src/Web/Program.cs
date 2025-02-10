@@ -1,5 +1,6 @@
 using Tlis.Inventory.Application;
 using Tlis.Inventory.Infrastructure;
+using Tlis.Inventory.Web.Controllers;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddControllersWithViews();
 var mvcBuilder = builder.Services.AddRazorPages();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
+builder.Services.AddScoped<CategoriesController>();
 
 if (builder.Environment.IsDevelopment())
     mvcBuilder.AddRazorRuntimeCompilation();
@@ -28,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Category}/{action=Index}/{id?}");
+    pattern: "{controller=Categories}/{action=Index}/{id?}");
 
 app.Run();

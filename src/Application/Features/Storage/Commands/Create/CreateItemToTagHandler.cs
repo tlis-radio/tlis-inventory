@@ -15,7 +15,7 @@ public class CreateItemToTagHandler(StorageUnitOfWork unitOfWork) : ICommandHand
             TagName = tagName
         };
 
-        await unitOfWork.ItemsToTags.CreateOrUpdate(itemToTag, cancellationToken);
+        await unitOfWork.ItemsToTags.Create(itemToTag, cancellationToken);
 
         return (itemToTag.ItemId, itemToTag.TagName);
     }

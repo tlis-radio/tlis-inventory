@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Tlis.Inventory.Web</title>
     <link rel="stylesheet" href="~/css/build.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/Tlis.Inventory.Web.styles.css" asp-append-version="true"/>
 </head>
 <body>
 <header class="main-header">
     <div class="h-full grow-0">
         <button
             class="h-full rounded-md stroke-azure duration-300 ease-in-out hover:scale-120"
-            onclick="toggle_nav_menu()"
-        >
+            onclick="toggle_nav_menu()">
             <svg class="w-auto h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                 <path d="M4 17H8M12 17H20M4 12H20M4 7H12M16 7H20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </button>
     </div>
+    <div class="h-full grow-0 shrink-0 ml-2">
+        <a class="text-2xl text-nowrap" href="~/">
+            Tlis.Inventory.Web
+        </a>
+    </div>
 </header>
 
 <div class="main-content">
-    <aside id="nav-menu" aria-hidden="false" class="left-sidebar">
+    <aside id="nav-menu" aria-hidden="true" class="left-sidebar">
         <nav class="nav-menu">
-            <a class="btn" asp-controller="Category" asp-action="Index">Categories</a>
+            <a class="btn" asp-controller="Categories" asp-action="Index">Categories</a>
         </nav>
     </aside>
 

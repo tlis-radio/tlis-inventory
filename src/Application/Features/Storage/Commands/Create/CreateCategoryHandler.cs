@@ -9,7 +9,7 @@ public class CreateCategoryHandler(StorageUnitOfWork unitOfWork) : ICommandHandl
     {
         var category = new Category { Name = request.Name };
 
-        await unitOfWork.Categories.CreateOrUpdate(category, cancellationToken);
+        await unitOfWork.Categories.Create(category, cancellationToken);
 
         return category.Id;
     }

@@ -18,6 +18,6 @@ public class UpdateCategoryHandler(StorageUnitOfWork unitOfWork) : ICommandHandl
         if (name is not null)
             category.Name = name;
 
-        await unitOfWork.Categories.CreateOrUpdate(category, cancellationToken);
+        await unitOfWork.Categories.Update(category, cancellationToken);
     }
 }
