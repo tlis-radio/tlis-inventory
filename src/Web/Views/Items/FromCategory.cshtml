@@ -1,4 +1,4 @@
-﻿@model CategoryDetailsViewModel
+﻿@model CategoryWithItemsViewModel
 
 @{
     ViewBag.Title = Model.Category.Name;
@@ -9,19 +9,6 @@
     <div class="mb-4">
         <h1 class="text-2xl">@Model.Category.Name</h1>
     </div>
-    
-    <div class="flex flex-row flex-wrap justify-start items-start w-full my-4">
-        @if (!ViewData.ModelState.IsValid)
-        { 
-            @foreach (var state in ViewData.ModelState.Where(state => state.Value.Errors.Count != 0))
-            {
-                <div class="flex flex-row flex-nowrap shrink-0 p-2 transition-colors duration-75 ease-in-out rounded shadow-lg shadow-gray-400 justify-center grow-0 text-black text-lg hover:text-white bg-cinnabar hover:shadow-cinnabar hover:bg-chili-red">
-                    @Html.ValidationMessage(state.Key)
-                </div>
-            }
-        }
-    </div>
-    
     <div class="min-w-full overflow-x-auto">
         <table class="table-auto border-collapse min-w-full">
             <thead>
@@ -34,29 +21,6 @@
             </thead>
             
             <tbody>
-            <form method="post" asp-controller="Items" asp-action="AddItem">
-                <tr class="bg-gray-300 *:h-fit *:px-1 *:py-2 *:shrink-0 *:text-center *:text-nowrap ">
-                    <td>
-                        <input  type="number" hidden="hidden" name="CategoryId" value="@Model.Category.Id" required="required"/>
-                        <input class="outline-none border-0" type="text" name="Name" placeholder="Name" required="required"/>
-                    </td>
-                    <td>
-                        <input class="outline-none border-0" type="number" name="Quantity" placeholder="Quantity" required="required"/>
-                    </td>
-                    <td>
-                        <div id="tag-container" class="flex flex-row flex-nowrap shrink items-start justify-center content-center gap-1">
-                            <input type="text" id="tag-input" class="border-0 outline-none" placeholder="Type a tag and press Enter"/>
-                        </div>
-                        <input type="hidden" name="Tags" id="tagsHidden"/>
-                    </td>
-                    <td>
-                        <button type="submit">
-                            Submit
-                        </button>
-                    </td>
-                </tr>
-            </form>
-
             @foreach (var item in Model.Items)
             {
                 <tr class="odd:bg-gray-300 last:even:border-b-4 last:even:border-b-gray-300 *:h-fit *:px-1 *:py-2 *:shrink-0 *:text-center *:text-nowrap">

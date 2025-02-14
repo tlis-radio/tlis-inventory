@@ -26,32 +26,27 @@ public class CategoriesController(IMediator mediator) : Controller
                 Name = category.Name
             }).ToList();
         
-        return View("Index",categoryViewModels);
+        return View(categoryViewModels);
     }
+
+    [HttpGet]
+    public Task<IActionResult> Create()
+    {
+        return Task.FromResult<IActionResult>(View());
+    } 
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromForm, Required, StringLength(100)] string name)
+    public async Task<IActionResult> Create(CategoryCreateViewModel model)
     {
-        if (string.IsNullOrWhiteSpace(name))
-            ModelState.AddModelError("name", "Name cannot be empty.");
+        if (string.IsNullOrWhiteSpace(model.Name))
+            ModelState.AddModelError("Name", "Name cannot be empty.");
 
         if (!ModelState.IsValid)
-            return await Index();
+            return View();
         
-        await mediator.Send(new CreateCategory(name));
+        await mediator.Send(new CreateCategory(model.Name));
 
         return RedirectToAction("Index");
-    }
-
-    [HttpPut]
-    public async Task<IActionResult> Update(int id, [FromForm, StringLength(100)] string name)
-    {
-        if (!ModelState.IsValid)
-            return await Details(id);
-        
-        await mediator.Send(new UpdateCategory(id, name));
-
-        return RedirectToAction("Details", id);
     }
 
     [HttpDelete]
@@ -60,11 +55,5 @@ public class CategoriesController(IMediator mediator) : Controller
         await mediator.Send(new DeleteCategory(id));
 
         return RedirectToAction("Index");
-    }
-
-    [HttpGet]
-    public async Task<IActionResult> Details(int id)
-    {
-        throw new NotImplementedException();
     }
 }

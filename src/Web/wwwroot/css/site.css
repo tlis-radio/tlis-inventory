@@ -2,6 +2,7 @@
 @source '../../Views/';
 
 @theme {
+  
 
   --color-gunmetal: #2d3142ff;
   --color-lapis-lazuli: #2f5b9fff;
@@ -28,46 +29,70 @@
   
   html, body {
     @apply w-full h-full font-light;
-  } 
+    
+  }
   
   body {
     @apply flex flex-col overflow-hidden bg-gray-200;
   }
   
-  .general-form label {
-    @apply block font-medium text-gray-700;
-  }
-
-  .general-form input {
-    @apply mt-2 block w-full rounded-lg border-gray-400 focus:ring-2 focus:ring-azure focus:outline-none p-2;
-  }
-  
-  .add-category-form input {
-    @apply rounded-lg focus:ring-0 focus:outline-none grow;
+  .category-brick svg {
+    @apply h-full;
   }
 }
 
 @layer components {
+  .default-form {
+    @apply flex flex-col items-center px-7 max-md:w-full md:w-3/5 ;
+  }
+  
+  .default-form .form-name {
+    @apply text-3xl text-center;
+  }
+  
+  .default-form .form-block {
+    @apply w-full mb-4 flex flex-row flex-wrap justify-center;
+    
+  }
+  
+  .default-form .form-input {
+    @apply grow appearance-none;
+    @apply border-r-2 border-r-gray-600 rounded-r-sm;
+    @apply p-1;
+    @apply text-lg;
+    @apply focus:border-celestial-blue focus:outline-none;
+    @apply active:border-celestial-blue active:outline-none;
+  }
+
+  .default-form .form-label {
+    @apply text-lg cursor-text;
+    @apply p-1;
+    
+  }
+  
+  .default-form .validation-text {
+    @apply p-1;
+    @apply text-lg;
+    @apply text-chili-red;
+  }
+  
+  .default-form .submit-button {
+    @apply bg-celestial-blue text-black stroke-black hover:bg-black text-lg;
+    @apply px-4 py-1 w-50 rounded shrink;
+    @apply hover:bg-lapis-lazuli hover:text-white hover:stroke-white hover:shadow-celestial-blue;
+  }
   
   .category-brick {
-    @apply flex flex-row flex-nowrap shrink-0 grow justify-center;
-    @apply h-16 p-4;
-    @apply bg-celestial-blue text-black text-xl;
-    @apply transition-colors duration-75 ease-in-out;
+    @apply flex flex-row flex-nowrap grow justify-center;
+    @apply h-16 p-4 min-h-fit;
+    @apply bg-celestial-blue text-black stroke-black text-xl;
+    @apply transition-colors duration-200 ease-out;
     @apply rounded shadow-lg shadow-gray-400;
-    @apply hover:bg-lapis-lazuli hover:text-white  hover:shadow-celestial-blue;
+    @apply hover:bg-lapis-lazuli hover:text-white hover:stroke-white hover:shadow-celestial-blue;
   }
   
-  .category-brick .btn {
-    @apply h-full  stroke-black duration-300 ease-in-out hover:stroke-white hover:scale-120;
-  }
-  
-  .category-brick .link-to-items {
-    @apply flex justify-center items-center shrink-0 h-full text-nowrap;
-  }
-  
-  .category-brick .add-category-form {
-    @apply flex flex-row h-full; 
+  .category-brick .text {
+    @apply flex justify-center items-center h-full;
   }
   
   .main-header {
@@ -85,7 +110,6 @@
   .render-block {
     @apply max-sm:w-full sm:grow-1 overflow-y-auto;
   }
-  
   
   .left-sidebar {
     @apply h-full shrink-0;
@@ -105,15 +129,9 @@
     @apply border-b-2 border-lapis-lazuli;
     @apply last:border-none
   }
-  
-  .general-form {
-    @apply p-6 bg-white rounded-lg shadow-lg shadow-gray-400;
-  }
-
-  .general-form .btn-submit {
-    @apply w-full bg-celtic-blue text-white py-2 rounded-lg transition;
-  }
 }
 
 @layer utilities {
 }
+
+@variant hover (&:hover);

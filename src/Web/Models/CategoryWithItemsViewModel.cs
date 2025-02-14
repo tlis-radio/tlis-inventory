@@ -1,6 +1,6 @@
 ﻿namespace Tlis.Inventory.Web.Models;
 
-public class CategoryDetailsViewModel
+public class CategoryWithItemsViewModel
 {
     public required CategoryViewModel Category { get; set; }
     

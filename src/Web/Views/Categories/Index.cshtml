@@ -8,32 +8,19 @@
 <div class="flex flex-row flex-wrap justify-center content-start gap-x-4 gap-y-4 w-full min-h-full p-4">
     @foreach (CategoryViewModel category in Model)
     {
-        <a asp-controller="Items" asp-action="FromCategory" asp-route-categoryId="@category.Id" class="category-brick" >
-            <span
-               class="link-to-items">
+        <a class="category-brick" asp-controller="Items" asp-action="FromCategory" asp-route-categoryId="@category.Id">
+            <span class="text">
                 @category.Name
             </span>
         </a>
     }
-    
-    <div class="category-brick">
-        <form method="post" asp-controller="Categories" asp-action="Create" class="add-category-form flex-nowrap shrink-0 grow">
-            <input name="name" size="1" type="text" placeholder="Name" required="required"/>
-        
-            <button type="submit" class="btn">
-                <svg class="h-full " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 7L11.5 15.5M4 13L9.0001 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </form>
-    </div>
-    @if (!ViewData.ModelState.IsValid)
-    {
-        @foreach (string stateKey in ViewData.ModelState.Keys)
-        {
-            <div class="category-brick bg-cinnabar hover:shadow-cinnabar hover:bg-chili-red">
-                @Html.ValidationMessage(stateKey)
-            </div>
-        }
-    }
+
+    <a class="category-brick" asp-controller="Categories" asp-action="Create">
+        <span class="text">
+            Add new item
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12H9M12 12H20M12 4V20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+    </a>
 </div>

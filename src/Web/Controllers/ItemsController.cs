@@ -52,7 +52,7 @@ public class ItemsController(IMediator mediator) : Controller
             Tags = item.Tags
         }).ToList();
         
-        return View("FromCategory",new CategoryDetailsViewModel
+        return View("FromCategory",new CategoryWithItemsViewModel
         {
             Category = categoryView,
             Items = itemViews

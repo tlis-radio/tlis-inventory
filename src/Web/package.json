@@ -9,7 +9,7 @@
   "author": "Vladyslav Pyrch",
   "license": "ISC",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.1",
-    "tailwindcss": "^4.0.1"
+    "@tailwindcss/cli": "^4.0.6",
+    "tailwindcss": "^4.0.6"
   }
 }

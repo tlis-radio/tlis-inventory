@@ -1,0 +1,25 @@
+﻿@model CategoryCreateViewModel
+
+@{
+    ViewBag.Title = "Create Category";
+    Layout = "_Layout";
+}
+
+<div class="flex justify-center content-center p-4 w-full h-full overflow-y-auto">
+    <form class="default-form" asp-controller="Categories" asp-action="Create" method="post">
+        <div class="form-block">
+            <h1 class="form-name">
+                Create Category
+            </h1>
+        </div>
+        
+        <div class="form-block">
+            <label class="form-label" asp-for="Name"></label>
+            <input class="form-input" asp-for="Name" type="text" required="required">
+            <br/>
+            <span class="validation-text" asp-validation-for="Name"></span>
+        </div>
+
+        <button class="submit-button">Submit</button>
+    </form>
+</div>
