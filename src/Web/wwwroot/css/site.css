@@ -76,23 +76,24 @@
     @apply text-chili-red;
   }
   
-  .default-form .submit-button {
+  .default-form .blue-button {
     @apply bg-celestial-blue text-black stroke-black hover:bg-black text-lg;
     @apply px-4 py-1 w-50 rounded shrink;
     @apply hover:bg-lapis-lazuli hover:text-white hover:stroke-white hover:shadow-celestial-blue;
   }
-  
-  .category-brick {
-    @apply flex flex-row flex-nowrap grow justify-center;
-    @apply h-16 p-4 min-h-fit;
-    @apply bg-celestial-blue text-black stroke-black text-xl;
-    @apply transition-colors duration-200 ease-out;
-    @apply rounded shadow-lg shadow-gray-400;
-    @apply hover:bg-lapis-lazuli hover:text-white hover:stroke-white hover:shadow-celestial-blue;
+
+  .default-form .red-button {
+    @apply bg-cinnabar text-black stroke-black hover:bg-black text-lg;
+    @apply px-4 py-1 w-50 rounded shrink;
+    @apply hover:bg-chili-red hover:shadow-cinnabar;
   }
   
-  .category-brick .text {
-    @apply flex justify-center items-center h-full;
+  .category-brick {
+    @apply flex flex-row flex-nowrap grow shrink-0 justify-center;
+    @apply min-h-16 h-fit max-w-full;
+    @apply bg-celestial-blue text-black *:stroke-black text-xl hover:bg-lapis-lazuli;
+    @apply transition-colors duration-200 ease-out;
+    @apply rounded shadow-lg shadow-gray-400 ;
   }
   
   .main-header {

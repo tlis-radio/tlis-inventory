@@ -8,19 +8,27 @@
 <div class="flex flex-row flex-wrap justify-center content-start gap-x-4 gap-y-4 w-full min-h-full p-4">
     @foreach (CategoryViewModel category in Model)
     {
-        <a class="category-brick" asp-controller="Items" asp-action="FromCategory" asp-route-categoryId="@category.Id">
-            <span class="text">
+        <span class="category-brick">
+            <a 
+                class="text-center text-wrap text-ellipsis min-h-16 h-fit p-4 box-border hover:text-white"
+                asp-controller="Items" asp-action="FromCategory" asp-route-categoryId="@category.Id"
+                >
                 @category.Name
-            </span>
-        </a>
+            </a>
+            <a asp-controller="Categories" asp-action="Edit" asp-route-id="@category.Id">
+                <svg class="h-16 pr-4 py-4 hover:stroke-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 15L4 16V20H8L14 14M18 10L21 7L17 3L14 6M18 10L17 11M18 10L14 6M14 6L7.5 12.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </span>
     }
 
     <a class="category-brick" asp-controller="Categories" asp-action="Create">
-        <span class="text">
-            Add new item
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 12H9M12 12H20M12 4V20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        <span class="text-center text-wrap text-ellipsis h-16 p-4 box-border hover:text-white">
+            Create Category
         </span>
+        <svg class="h-16 pr-4 py-4 hover:stroke-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12H9M12 12H20M12 4V20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
     </a>
 </div>

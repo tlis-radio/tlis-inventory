@@ -1,26 +1,27 @@
-﻿@model CategoryCreateViewModel
+﻿@model CategoryEditViewModel
 
 @{
-    ViewBag.Title = "Create Category";
+    ViewBag.Title = "Edit Category";
     Layout = "_Layout";
 }
 
 <div class="flex justify-center content-center p-4 w-full h-full overflow-y-auto">
-    <form class="default-form" asp-controller="Categories" asp-action="Create" method="post">
+    <form class="default-form" asp-controller="Categories" asp-action="Edit">
         <div class="form-block">
             <h1 class="form-name">
-                Create Category
+                Edit Category
             </h1>
         </div>
-        
+
         <div class="form-block">
             <label class="form-label" asp-for="Name"></label>
             <label class="form-label" asp-for="Name">:</label>
-            <input class="form-input" asp-for="Name" type="text" required="required">
+            <input class="form-input" asp-for="Name" type="text" required="required" value="@Model.Name">
             <br/>
             <span class="validation-text" asp-validation-for="Name"></span>
         </div>
 
-        <button type="submit" class="blue-button">Submit</button>
+        <button type="submit" class="blue-button mb-2">Submit</button>
+        <a asp-controller="Categories" asp-action="Delete" asp-route-id="@Model.Id" class="red-button text-center">Delete</a>
     </form>
 </div>

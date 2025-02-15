@@ -30,9 +30,9 @@ public class CategoriesController(IMediator mediator) : Controller
     }
 
     [HttpGet]
-    public Task<IActionResult> Create()
+    public IActionResult Create()
     {
-        return Task.FromResult<IActionResult>(View());
+        return View();
     } 
 
     [HttpPost]
@@ -49,7 +49,24 @@ public class CategoriesController(IMediator mediator) : Controller
         return RedirectToAction("Index");
     }
 
-    [HttpDelete]
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id)
+    {
+        CategoryDto? categoryDto = await mediator.Send(new GetCategoryById(id));
+
+        return categoryDto is null ? View("NotFound") : View(new CategoryEditViewModel {Id = categoryDto.Id, Name = categoryDto.Name});
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(CategoryEditViewModel categoryEditViewModel)
+    {
+        if (ModelState.IsValid)
+            await mediator.Send(new UpdateCategory(categoryEditViewModel.Id, categoryEditViewModel.Name));
+
+        return await Edit(categoryEditViewModel.Id);
+    }
+
+    [HttpGet]
     public async Task<IActionResult> Delete(int id)
     {
         await mediator.Send(new DeleteCategory(id));
